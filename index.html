@@ -126,6 +126,7 @@
               class="contact100-form-btn"
               data-toggle="modal"
               data-target="#exampleModal"
+              id="inhoadon"
             >
               IN HÓA ĐƠN
             </button>
@@ -142,7 +143,74 @@
         </div>
       </div>
     </div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
+          <div class="modal-body">
+            <div class="container-fluid">
+              <table class="w-100 table table-striped table-bordered">
+                <thead class="thead-dark">
+                  <tr class="text-center">
+                    <th colspan="4">CHI TIẾT HÓA ĐƠN</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>CHI TIẾT</td>
+                  <td>SỬ DỤNG</td>
+                  <td>ĐƠN GIÁ(1000Đ)</td>
+                  <td>THÀNH TIỀN(1000Đ)</td>
+                </tr>
+                <tr>
+                  <td>KM đầu tiên</td>
+                  <td id="SD_KM_1"></td>
+                  <td id="DG_KM_1"></td>
+                  <td id="TT_KM_1"></td>
+                </tr>
+                <tr>
+                  <td>Từ 1 đến 19 km</td>
+                  <td id="SD_KM_2"></td>
+                  <td id="DG_KM_2"></td>
+                  <td id="TT_KM_2"></td>
+                </tr>
+                <tr>
+                  <td>Từ 19 km trở lên</td>
+                  <td id="SD_KM_3"></td>
+                  <td id="DG_KM_3"></td>
+                  <td id="TT_KM_3"></td>
+                </tr>
+                <tr>
+                  <td>Thời gian chờ</td>
+                  <td id="inTimeCho"></td>
+                  <td id="in_DG_timeCho"></td>
+                  <td id="inTimeThanhTien"></td>
+                </tr>
+                <tr class="text-center">
+                  <td id="table_tong" colspan="4"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--===============================================================================================-->
     <script src="./vendor/jquery/jquery.min.js"></script>
     <!--===============================================================================================-->

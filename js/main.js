@@ -174,11 +174,11 @@ document.getElementById("inhoadon").onclick = function () {
   var soKm = document.getElementById("Kilomet").value;
   var thoiGianCho = document.getElementById("Time").value;
   var inBangGia = layLoaiXe();
-  document.getElementById("inTimeCho").innerHTML = thoiGianCho;
-  document.getElementById("table_tong").innerHTML = "TỔNG TIỀN " + tongTien;
-  console.log(tongTien);
-  insoKm(soKm);
-  inTinhChiTiet(tienKM_1, tienKM_2, tienKM_3, tienCho);
+  if (!inBangGia) {
+    document.getElementById("alert").innerHTML = "Bạn chưa tính tiền";
+    return;
+  }
+
   switch (inBangGia) {
     case "grabX":
       document.getElementById("DG_KM_1").innerHTML = giaKmDauX;
@@ -203,6 +203,11 @@ document.getElementById("inhoadon").onclick = function () {
     default:
       break;
   }
+  document.getElementById("inTimeCho").innerHTML = thoiGianCho;
+  document.getElementById("table_tong").innerHTML = "TỔNG TIỀN " + tongTien;
+  console.log(tongTien);
+  insoKm(soKm);
+  inTinhChiTiet(tienKM_1, tienKM_2, tienKM_3, tienCho);
 };
 function insoKm(soKm, inKM_2, inKM_3) {
   if (0 < soKm && soKm <= 1) {

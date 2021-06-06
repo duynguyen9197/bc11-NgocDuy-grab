@@ -174,8 +174,9 @@ document.getElementById("inhoadon").onclick = function () {
   var soKm = document.getElementById("Kilomet").value;
   var thoiGianCho = document.getElementById("Time").value;
   var inBangGia = layLoaiXe();
-  if (!inBangGia) {
-    document.getElementById("alert").innerHTML = "Bạn chưa tính tiền";
+  console.log(tongTien);
+  if (tongTien === 0) {
+    document.getElementById("table_tong").innerHTML = "Bạn chưa tính tiền";
     return;
   }
 
@@ -205,7 +206,7 @@ document.getElementById("inhoadon").onclick = function () {
   }
   document.getElementById("inTimeCho").innerHTML = thoiGianCho;
   document.getElementById("table_tong").innerHTML = "TỔNG TIỀN " + tongTien;
-  console.log(tongTien);
+
   insoKm(soKm);
   inTinhChiTiet(tienKM_1, tienKM_2, tienKM_3, tienCho);
 };

@@ -57,7 +57,7 @@ document.getElementById("tinhtien").onclick = function (event) {
   var soKm = document.getElementById("Kilomet").value;
   var thoiGianCho = document.getElementById("Time").value;
   var loaiXe = layLoaiXe();
-  console.log(loaiXe);
+  console.log(!!loaiXe);
 
   if (!loaiXe) {
     alert("Bạn chưa chọn loại xe");
@@ -170,14 +170,19 @@ function tinhChiTiet(
 // in hóa đơn
 var inKM_2 = 0;
 var inKM_3 = 0;
-document.getElementById("inhoadon").onclick = function () {
+document.getElementById("inhoadon").onclick = function (event) {
+  event.preventDefault();
   var soKm = document.getElementById("Kilomet").value;
   var thoiGianCho = document.getElementById("Time").value;
   var inBangGia = layLoaiXe();
   console.log(tongTien);
-  if (tongTien === 0) {
-    document.getElementById("table_tong").innerHTML = "Bạn chưa tính tiền";
+  if (!inBangGia || soKm == 0 || tongTien == 0) {
+    document.getElementById("alert").style.display = "none";
+    document.getElementById("chuatinhtien").style.display = "block";
     return;
+  } else {
+    document.getElementById("chuatinhtien").style.display = "none";
+    document.getElementById("alert").style.display = "block";
   }
 
   switch (inBangGia) {
